@@ -47,7 +47,7 @@ Tip: Upgrading weapons early makes later fights much easier.
 
 ```text
 .
-├── index.html   # Game layout and controls
-├── RPG.css      # Styling
-└── RPG.js       # Game logic and state
+|-- index.html   # Game layout and controls
+|-- RPG.css      # Styling
+`-- RPG.js       # Game logic and state
 ```
