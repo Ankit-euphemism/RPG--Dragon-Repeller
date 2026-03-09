@@ -1,53 +1,65 @@
 # Dragon Repeller RPG
 
-A small browser-based RPG built with plain HTML, CSS, and JavaScript.
+A lightweight browser RPG built with plain HTML, CSS, and JavaScript.
 
-## Overview
+## About The Game
 
-In this game, you start in town and prepare to defeat a dragon by:
-- Buying health and stronger weapons from the store
-- Fighting monsters in the cave to gain XP and gold
-- Managing inventory and survivability before the final fight
+`Dragon Repeller` is a mini text-based adventure where you train your character and prepare for a final dragon battle.
 
-The game runs entirely in the browser with no dependencies or build step.
+Your objective:
+- Earn `XP` and `Gold` by defeating cave monsters.
+- Spend gold in the store to buy health and stronger weapons.
+- Survive and defeat the dragon to win the game.
 
-## Features
+## Current Highlights
 
-- Stateless UI controls that change by location (town, store, cave, fight, etc.)
-- Player stats: XP, Health, Gold
-- Weapon progression and inventory system
-- Combat system with random hit/miss and weapon break chance
-- Win/lose states with replay support
-- Hidden number-picking mini-game (easter egg)
+- Clean and responsive interface for desktop and mobile screens.
+- Better readability with improved layout, spacing, and visual hierarchy.
+- Touch-friendly controls (larger buttons and stacked actions on small screens).
+- Core gameplay remains unchanged.
+
+## Gameplay Features
+
+- Location-based actions (town, store, cave, fight, and special states).
+- Player stats tracking: `XP`, `Health`, `Gold`.
+- Weapon upgrade and inventory system.
+- Randomized combat behavior (hit/miss, damage variation, weapon break chance).
+- Win/lose states with instant replay.
+- Hidden number mini-game (easter egg).
 
 ## Tech Stack
 
-- HTML (`index.html`)
-- CSS (`RPG.css`)
-- Vanilla JavaScript (`RPG.js`)
+- `index.html` for structure
+- `RPG.css` for presentation and responsiveness
+- `RPG.js` for game logic and state updates
 
-## Run Locally
+## Run The Game
 
 1. Clone or download this repository.
-2. Open `index.html` in your browser.
+2. Open `index.html` in any modern browser.
 
-No installation is required.
+No installation, package manager, or build step is required.
 
-## How to Play
+## How To Play
 
-1. Start in the town square.
-2. Visit the store to buy health and weapons.
-3. Go to the cave and defeat weaker monsters to gain XP and gold.
+1. Start at the town square.
+2. Visit the store to buy health and better weapons.
+3. Enter the cave to fight monsters and farm XP/gold.
 4. Return to town and choose `Fight dragon` when ready.
-5. Defeat the dragon to win.
+5. Beat the dragon to complete the game.
 
-Tip: Upgrading weapons early makes later fights much easier.
+Quick tip: Try to upgrade your weapon before taking on the dragon.
 
 ## Project Structure
 
 ```text
 .
-|-- index.html   # Game layout and controls
-|-- RPG.css      # Styling
-`-- RPG.js       # Game logic and state
+|-- index.html   # Game layout and UI containers
+|-- RPG.css      # Visual design and responsive styles
+`-- RPG.js       # Core game logic and state
 ```
+
+## Notes
+
+- This project is intentionally dependency-free and beginner-friendly.
+- UI updates were made without altering gameplay rules or JavaScript behavior.

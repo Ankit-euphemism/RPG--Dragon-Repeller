@@ -2,29 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="RPG.css">
     <title>RPG - Dragon Repeller</title>
   </head>
   <body>
-    <div id="game">
-      <div id="stats">
-        <span class="stat">XP: <strong><span id="xpText">0</span></strong></span>
-        <span class="stat">Health: <strong><span id="healthText">100</span></strong></span>
-        <span class="stat">Gold: <strong><span id="goldText">50</span></strong></span>
-      </div>
-      <div id="controls">
-        <button id="button1">Go to store</button>
-        <button id="button2">Go to cave</button>
-        <button id="button3">Fight dragon</button>
-      </div>
-      <div id="monsterStats">
-        <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
-        <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
-      </div>
-      <div id="text">
-        Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
-      </div>
-    </div>
+    <main class="app-shell">
+      <section id="game" aria-label="Dragon Repeller game panel">
+        <h1 class="game-title">Dragon Repeller</h1>
+        <p class="game-subtitle">Defeat the dragon and free the town.</p>
+
+        <div id="stats" aria-live="polite">
+          <span class="stat">XP: <strong><span id="xpText">0</span></strong></span>
+          <span class="stat">Health: <strong><span id="healthText">100</span></strong></span>
+          <span class="stat">Gold: <strong><span id="goldText">50</span></strong></span>
+        </div>
+
+        <div id="controls" aria-label="Game actions">
+          <button id="button1" type="button">Go to store</button>
+          <button id="button2" type="button">Go to cave</button>
+          <button id="button3" type="button">Fight dragon</button>
+        </div>
+
+        <div id="monsterStats" aria-live="polite">
+          <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
+          <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
+        </div>
+
+        <div id="text">
+          Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
+        </div>
+      </section>
+    </main>
     <script src="RPG.js"></script>
   </body>
 </html>
