@@ -4,36 +4,74 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="RPG.css">
-    <title>RPG - Dragon Repeller</title>
+    <title>Dragon Repeller — A Small Town RPG</title>
   </head>
   <body>
     <main class="app-shell">
-      <section id="game" aria-label="Dragon Repeller game panel">
+      <header class="page-header">
+        <p class="eyebrow"><span aria-hidden="true">✦</span> A small town. One big quest.</p>
         <h1 class="game-title">Dragon Repeller</h1>
-        <p class="game-subtitle">Defeat the dragon and free the town.</p>
-
-        <div id="stats" aria-live="polite">
-          <span class="stat">XP: <strong><span id="xpText">0</span></strong></span>
-          <span class="stat">Health: <strong><span id="healthText">100</span></strong></span>
-          <span class="stat">Gold: <strong><span id="goldText">50</span></strong></span>
+        <p class="game-subtitle">Build your strength. Defeat the dragon. Free the town.</p>
+      </header>
+      <section id="game" aria-label="Dragon Repeller adventure">
+        <div class="section-heading location-heading">
+          <div>
+            <p class="eyebrow">CURRENT LOCATION</p>
+            <h2 id="locationHeading">Town square</h2>
+          </div>
+          <span class="location-mark" aria-hidden="true">⌖</span>
         </div>
 
-        <div id="controls" aria-label="Game actions">
-          <button id="button1" type="button">Go to store</button>
-          <button id="button2" type="button">Go to cave</button>
-          <button id="button3" type="button">Fight dragon</button>
+        <section class="hero-panel" aria-labelledby="hero-heading">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">YOUR ADVENTURER</p>
+              <h2 id="hero-heading">Hero status</h2>
+            </div>
+            <span class="quest-badge"><span aria-hidden="true">⚔</span> Dragon quest</span>
+          </div>
+          <div id="stats" class="status-grid" role="group" aria-label="Your stats">
+            <div class="stat-card stat-xp"><span class="stat-icon" aria-hidden="true">✦</span><span class="stat-label">XP</span><strong class="stat-value" id="xpText">0</strong></div>
+            <div id="healthCard" class="stat-card stat-health"><span class="stat-icon" aria-hidden="true">♥</span><span class="stat-label">Health</span><strong class="stat-value"><span id="healthText">100</span></strong><div class="meter" aria-hidden="true"><span id="healthMeter"></span></div></div>
+            <div class="stat-card stat-gold"><span class="stat-icon" aria-hidden="true">◈</span><span class="stat-label">Gold</span><strong class="stat-value" id="goldText">50</strong></div>
+            <div class="stat-card stat-weapon"><span class="stat-icon" aria-hidden="true">⚒</span><span class="stat-label">Weapon</span><strong class="stat-value" id="weaponText">Stick</strong><div id="weaponMeter" class="meter weapon-meter" role="progressbar" aria-label="Weapon tier" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1"><span id="weaponMeterFill"></span></div></div>
+          </div>
+        </section>
+
+        <div class="adventure-panel">
+        <div class="action-heading"><h3>Choose your next move</h3><span>Tap an action to continue</span></div>
+        <div id="controls" role="group" aria-label="Available actions">
+          <button id="button1" class="action-button" type="button">Go to store</button>
+          <button id="button2" class="action-button" type="button">Go to cave</button>
+          <button id="button3" class="action-button action-primary" type="button">Fight dragon</button>
         </div>
 
-        <div id="monsterStats" aria-live="polite">
-          <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
-          <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
+        <div id="monsterStats" class="enemy-panel" aria-live="polite" aria-atomic="true">
+          <div class="enemy-heading"><span class="enemy-icon" aria-hidden="true">♟</span><div><span class="eyebrow">OPPONENT</span><strong id="monsterName"></strong></div><span class="enemy-health"><span id="monsterHealth"></span> HP</span></div>
+          <div class="meter enemy-meter" role="progressbar" aria-label="Opponent health" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><span id="monsterHealthMeter"></span></div>
+          <div class="momentum-row">
+            <span class="momentum-label"><span id="momentumText">Momentum · 0/5</span><span class="tooltip-wrap"><span class="tooltip-trigger" tabindex="0" aria-label="Momentum help" aria-describedby="momentumHelp">?</span><span id="momentumHelp" class="tooltip" role="tooltip">Counts successful hits in a row. It resets after a miss and does not change damage.</span></span></span>
+            <div id="momentumMeter" class="meter momentum-meter" role="progressbar" aria-label="Consecutive successful hits" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0"><span id="momentumMeterFill"></span></div>
+          </div>
         </div>
 
-        <div id="text">
-          Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
+        <div class="story-card">
+          <span class="story-mark" aria-hidden="true">✧</span>
+          <p id="text" role="status" aria-live="polite" aria-atomic="true">Welcome to Dragon Repeller. Defeat the dragon to help the townspeople leave. You are in the town square. Where will you go?</p>
+        </div>
         </div>
       </section>
     </main>
+    <footer class="page-footer">
+      <details class="guide-card">
+        <summary><span aria-hidden="true">ⓘ</span> How to play and quick tips</summary>
+        <div class="guide-content">
+          <div><h2>Play guide</h2><ol><li>Visit the store to buy health or a stronger weapon.</li><li>Enter the cave and defeat monsters to earn XP and gold.</li><li>Return to town and choose <strong>Fight dragon</strong> when ready.</li></ol></div>
+          <div><h2>Controls and tips</h2><p>Choose an action with a tap or click. On a keyboard, use <kbd>Tab</kbd> to move and <kbd>Enter</kbd> or <kbd>Space</kbd> to choose.</p><p>Momentum counts hits in a row. It resets when you miss and does not change damage.</p><p class="guide-tip"><strong>Tip:</strong> Upgrade your weapon before you challenge the dragon.</p></div>
+        </div>
+      </details>
+      <p class="footer-note">Your progress stays in this browser tab. Good luck, hero.</p>
+    </footer>
     <script src="RPG.js"></script>
   </body>
 </html>
