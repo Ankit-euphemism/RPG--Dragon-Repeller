@@ -1,6 +1,6 @@
 let xp = 0;
 let health = 100;
-let gold = 50;
+let gold = 100;
 let currentWeapon = 0;
 let fighting;
 let monsterHealth;
@@ -60,13 +60,13 @@ const locations = [
   },
   {
     name: "store",
-    "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Return to town"],
+    "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
     "button functions": [buyHealth, buyWeapon, goTown],
     text: "You enter the store."
   },
   {
     name: "cave",
-    "button text": ["Fight slime", "Fight fanged beast", "Return to town"],
+    "button text": ["Fight slime", "Fight fanged beast", "Go to town square"],
     "button functions": [fightSlime, fightBeast, goTown],
     text: "You enter the cave. Monsters are nearby."
   },
@@ -78,7 +78,7 @@ const locations = [
   },
   {
     name: "kill monster",
-    "button text": ["Return to town", "Return to town", "Return to town"],
+    "button text": ["Go to town square", "Go to town square", "Go to town square"],
     "button functions": [goTown, goTown, easterEgg],
     text: "The monster falls. You gain XP and find gold."
   },
